@@ -1,0 +1,25 @@
+
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}blog title{% endblock %}
+{%block content%}
+<div class="row text-center vertical-middle-sm">
+    <h1>my blog</h1>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+        <ul>
+            {% for blog in blogs%}
+            <li><a href="{{ blog.id }}">{{ blog.title }}</a></li>
+            {% endfor %}
+
+        </ul>
+
+    </div>
+    <div class="col-xs-6 col-md-4">
+        <h2>advertisement</h2>
+        <p>www.google.com</p>
+        <img width="200px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606731883614&di=bb2c12cdaa69f965ccd0f65b3acce007&imgtype=0&src=http%3A%2F%2Fimages.88db.com.hk%2F5469084-01118.JPG" >
+    </div>
+</div>
+{% endblock %}
