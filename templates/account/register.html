@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}register user{% endblock %}
+{% block content %}
+    <div class="row text-center vertical-middle-sm">
+    <h1>Register</h1>
+    <p>if you are a user,<strong style="color:red"><a href="{% url 'account:login' %}">LOGIN!</a></strong>
+    </p> <p>or register.</p>
+    <form class="form-horizontal" action="." method="post">{% csrf_token %}
+    <div class="form-group">
+        <lable for="{{ form.username.id_lable }}" class="col-md-5 control-label">Username</lable>
+        <div class="col-md-6 text-left">{{ form.username }}</div>
+    </div>
+         <div class="form-group">
+        <lable for="{{ form.email.id_lable }}" class="col-md-5 control-label">Email</lable>
+             <div class="col-md-6 text-left">{{ form.email }}</div> </div>
+              <div class="form-group">
+        <lable for="{{ form.password.id_lable }}" class="col-md-5 control-label">Password</lable>
+                  <div class="col-md-6 text-left">{{ form.password }}</div> </div>
+                   <div class="form-group">
+        <lable for="{{ form.password.id_lable }}" class="col-md-5 control-label">Confirm Password</lable>
+                       <div class="col-md-6 text-left">{{ form.password2 }}</div></div>
+        <div class="form-group">
+        <lable for="{{ profile.birth.id_lable }}" class="col-md-5 control-label">Birth Day</lable>
+        <div class="col-md-6 text-left">{{ profile.birth }}</div>
+    </div>
+        <div class="form-group">
+        <lable for="{{ profile.phone.id_lable }}" class="col-md-5 control-label">Phone</lable>
+        <div class="col-md-6 text-left">{{ profile.phone }}</div>
+    </div>
+
+        <input type="submit" class="btn btn-primary btn-lg " value="REGISTER">
+
+
+
+    </form>
+    </div>
+{% endblock %}

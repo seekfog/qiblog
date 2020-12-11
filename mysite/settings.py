@@ -26,7 +26,7 @@ SECRET_KEY = ')%_617a73i#sci%$u62p*%ykk%qu9pxeg*%+@j^fzo^lg&p#t3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.18.56.21']
 
 
 # Application definition
@@ -40,13 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'account',
+    'password_reset'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -123,3 +124,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS= [os.path.join(BASE_DIR,'static')]
 LOGIN_REDIRECT_URL='/blog/title'
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_HOST_USER = 'whereisyourmind@163.com'
+EMAIL_HOST_PASSWORD = 'XHBSMIYITJBQJPCC'
+# EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'whereisyourmind@163.com'
